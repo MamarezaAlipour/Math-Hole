@@ -116,11 +116,6 @@
  !>
  !>  Level 2 Blas routine.
  !>
- !>  -- Written on 22-October-1986.
- !>     Jack Dongarra, Argonne National Lab.
- !>     Jeremy Du Croz, Nag Central Office.
- !>     Sven Hammarling, Nag Central Office.
- !>     Richard Hanson, Sandia National Labs.
  !> \endverbatim
  !
  !  Authors:
