@@ -32,16 +32,16 @@ jobs:
     ref: # optional
     # Personal access token (PAT) used to fetch the repository. The PAT is configured with the local git config, which enables your scripts to run authenticated git commands. The post-job step removes the PAT.
 
-We recommend using a service account with the least permissions necessary. Also when generating a new PAT, select the least scopes necessary.
+    # We recommend using a service account with the least permissions necessary. Also when generating a new PAT, select the least scopes necessary.
 
-[Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+    #[Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
 
     token: # optional, default is ${{ github.token }}
     # SSH key used to fetch the repository. The SSH key is configured with the local git config, which enables your scripts to run authenticated git commands. The post-job step removes the SSH key.
 
-We recommend using a service account with the least permissions necessary.
+# We recommend using a service account with the least permissions necessary.
 
-[Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
+# [Learn more about creating and using encrypted secrets](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/creating-and-using-encrypted-secrets)
 
     ssh-key: # optional
     # Known hosts in addition to the user and global host key database. The public SSH keys for a host may be obtained using the utility `ssh-keyscan`. For example, `ssh-keyscan github.com`. The public key for github.com is always implicitly added.
@@ -62,7 +62,7 @@ We recommend using a service account with the least permissions necessary.
     lfs: # optional
     # Whether to checkout submodules: `true` to checkout submodules or `recursive` to recursively checkout submodules.
 
-When the `ssh-key` input is not provided, SSH URLs beginning with `git@github.com:` are converted to HTTPS.
+# When the `ssh-key` input is not provided, SSH URLs beginning with `git@github.com:` are converted to HTTPS.
 
     submodules: # optional
     # Add repository path as safe.directory for Git global config by running `git config --global --add safe.directory <path>`
