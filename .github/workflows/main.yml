@@ -22,13 +22,18 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+      - checkout
       - run: |
           sudo apt-get update && sudo apt-get upgrade
           sudo apt-get install gfortran && sudo apt-get install gfortran-10
-          cd "source"
+          cd source
           mkdir build
           mkdir lib
           make
           make build
           make install
           
+workflows:
+  CI:
+    jobs:
+      -build
