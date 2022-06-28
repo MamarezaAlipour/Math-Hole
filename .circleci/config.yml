@@ -1,6 +1,6 @@
 version: 2.1
 executors:
-  my-custom-executor:
+  fortran-build:
     docker:
       - image: cimg/base:stable
         auth:
@@ -11,7 +11,7 @@ executors:
 jobs:
   build:
 
-    executor: my-custom-executor
+    executor: fortran-build
     steps:
       - checkout
       - run: |
@@ -25,6 +25,6 @@ jobs:
           make install
 
 workflows:
-  my-custom-workflow:
+  fortran-build:
     jobs:
       - build
