@@ -1,0 +1,29 @@
+version: 2.1
+executors:
+  fortran-build:
+    docker:
+      - image: cimg/base:stable
+        auth:
+          # ensure you have first added these secrets
+          # visit app.circleci.com/settings/project/github/PariKhaleghi/Math-Hole/environment-variables
+          username: $DOCKER_HUB_USER
+          password: $DOCKER_HUB_PASSWORD
+jobs:
+  build:
+
+    executor: fortran-build
+    steps:
+      - checkout
+      - run: |
+          sudo apt-get update && sudo apt-get upgrade
+          sudo apt-get install gfortran && sudo apt-get install gfortran-10
+          cd source
+          mkdir build
+          mkdir lib
+          make
+          make build
+          make install
+workflows:
+  fortran-build:
+    jobs:
+      - build
