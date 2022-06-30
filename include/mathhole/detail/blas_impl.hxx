@@ -68,20 +68,20 @@ namespace mathhole {
 			//
 			// xGEMM (e.g. General Matrix Product)
 
-			extern "C" void mathhole_sgemm_(const char* transa, const char* transb,
-											const std::int32_t* m, const std::int32_t* n,
-											const std::int32_t* k, const float* alpha,
-											const float a[], const std::int32_t* lda,
-											const float b[], const std::int32_t* ldb,
-											const float* beta, float c[], const std::int32_t* ldc,
+			extern "C" void mathhole_sgemm_(char const* transa, char const* transb,
+											std::int32_t const* m, std::int32_t const* n,
+											std::int32_t const* k, float const* alpha,
+											float const a[], std::int32_t const* lda,
+											float const b[], std::int32_t const* ldb,
+											float const* beta, float c[], std::int32_t const* ldc,
 											std::int32_t length_transa, std::int32_t length_transb);
 
-			extern "C" void mathhole_dgemm_(const char* transa, const char* transb,
-											const std::int32_t* m, const std::int32_t* n,
-											const std::int32_t* k, const double* alpha,
-											const double a[], const std::int32_t* lda,
-											const double b[], const std::int32_t* ldb,
-											const double* beta, double c[], const std::int32_t* ldc,
+			extern "C" void mathhole_dgemm_(char const* transa, char const* transb,
+											std::int32_t const* m, std::int32_t const* n,
+											std::int32_t const* k, double const* alpha,
+											double const a[], std::int32_t const* lda,
+											double const b[], std::int32_t const* ldb,
+											double const* beta, double c[], std::int32_t const* ldc,
 											std::int32_t length_transa, std::int32_t length_transb);
 
 		} // namespace detail
