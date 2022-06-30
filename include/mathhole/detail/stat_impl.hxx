@@ -6,6 +6,7 @@
 
 #include <cmath>   // std::sqrt
 #include <cstdint> // std::int32_t
+#include <mathhole/detail/stat_serial_impl.hxx>
 
 namespace mathhole {
 	namespace stat {
