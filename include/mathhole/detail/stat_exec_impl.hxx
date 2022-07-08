@@ -7,6 +7,8 @@
 #include <cmath>   // std::sqrt
 #include <cstdint> // std::int32_t
 #include <mathhole/detail/stat_serial_impl.hxx>
+#include <mathhole/detail/stat_parallel_impl.hxx>
+#include <mathhole/detail/stat_parallel_simd_impl.hxx>
 #include <mathhole/cxx17/exec.hxx>
 
 namespace mathhole {
