@@ -61,8 +61,21 @@ namespace mathhole {
 		}
 
         template <class ExecutionPolicy, class Real>
-		inline Real arithmetic_mean(ExecutionPolicy&& /*exec*/, std::int32_t n, Real const x[]){
-            // soon...
-        }
+		inline Real arithmetic_mean(ExecutionPolicy&& /*exec*/, std::int32_t n, Real const x[]) {
+			if constexpr (std::is_same_v<std::decay_t<ExecutionPolicy>,
+										 mathhole::exec::sequential_policy>)
+				return detail::arithmetic_mean_serial_impl(n, x);
+			else if constexpr (std::is_same_v<std::decay_t<ExecutionPolicy>,
+											  mathhole::exec::parallel_policy>)
+				return detail::arithmetic_mean_parallel_impl(n, x);
+			else if constexpr (std::is_same_v<std::decay_t<ExecutionPolicy>,
+											  mathhole::exec::parallel_unsequential_policy>)
+				return detail::arithmetic_mean_parallel_simd_impl(n, x);
+			else if constexpr (std::is_same_v<std::decay_t<ExecutionPolicy>,
+											  mathhole::exec::unsequential_policy>)
+				return detail::arithmetic_mean_simd_impl(n, x);
+			else
+				static_assert(mathhole::exec::is_execution_policy_v<ExecutionPolicy>);
+		}
     }
 }
