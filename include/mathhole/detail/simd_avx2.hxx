@@ -97,8 +97,9 @@ namespace mathhole {
 		//
 		// Single precision
 
-		// inline v256f
-		// avx2_set_scalar(float a)  { return _mm256_set1_ps(a); }
+		inline v256f avx2_set_scalar(float a) {
+			return _mm256_set1_ps(a);
+		}
 
 		inline v256f avx2_broadcast(float const* addr) {
 			return _mm256_broadcast_ss(addr);
@@ -120,8 +121,9 @@ namespace mathhole {
 			return _mm256_sub_ps(a, b);
 		}
 
-		// inline v256d
-		// avx2_set_scalar(double a) { return _mm256_set1_pd(a); }
+		inline v256d avx2_set_scalar(double a) {
+			return _mm256_set1_pd(a);
+		}
 
 		inline v256d avx2_set_zero() {
 			return _mm256_setzero_pd();
