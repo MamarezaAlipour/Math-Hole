@@ -1,4 +1,4 @@
-// Copyright (c) 2022 Parisa Khaleghi
+// Copyright (c) 2022 Geek pww
 // All rights reserved
 
 #ifndef MATHHOLE_CXX23_STAT_HXX
